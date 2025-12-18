@@ -2,6 +2,7 @@
 
 import HeroSection from "@/components/hero/HeroSection";
 import SkillsEngine from "@/components/skills/SkillsEngine";
+import ProjectsSection from "@/components/projects/ProjectsSection";
 import ExperienceFlow from "@/components/experience/ExperienceFlow";
 import ContactSection from "@/components/contact/ContactSection";
 import ChatWidget from "@/components/chat/ChatWidget";
@@ -13,6 +14,7 @@ export default function Home() {
       <NavBar />
       <HeroSection />
       <SkillsEngine />
+      <ProjectsSection />
       <ExperienceFlow />
       <ContactSection />
       <ChatWidget />

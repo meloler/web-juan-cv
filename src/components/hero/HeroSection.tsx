@@ -73,8 +73,8 @@ export default function HeroSection() {
                     <TypewriterText
                         texts={[
                             "Business Operations Specialist",
-                            "Conectando Negocio y Tecnología",
-                            "El Arquitecto del Orden"
+                            "Process Automation (Low-Code)",
+                            "Conectando Negocio y Tecnología"
                         ]}
                     />
                 </motion.div>

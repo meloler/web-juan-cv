@@ -127,9 +127,9 @@ export default function ChatWidget() {
                         {/* Messages */}
                         <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-transparent">
                             {messages.length === 0 && (
-                                <div className="text-center text-gray-500 text-sm mt-10">
-                                    <p>¡Hola! Soy la IA de Juan.</p>
-                                    <p className="mt-2 text-xs">Pregúntame sobre su experiencia en Domingo Alonso, sus clases o cómo optimizar tu negocio.</p>
+                                <div className="text-center text-gray-500 text-sm mt-10 px-6">
+                                    <p>¡Hola! Soy el Gemelo Digital de Juan Salán.</p>
+                                    <p className="mt-2 text-xs">Escríbeme "Hola" para empezar.</p>
                                 </div>
                             )}
                             {messages.map((m) => (

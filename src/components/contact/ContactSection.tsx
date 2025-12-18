@@ -56,12 +56,12 @@ function MagneticButton({
 
 export default function ContactSection() {
     return (
-        <section className="py-32 px-4 flex flex-col items-center justify-center bg-gradient-to-t from-black via-[#050505] to-transparent">
+        <section className="py-12 px-4 flex flex-col items-center justify-center bg-gradient-to-t from-black via-[#050505] to-transparent">
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-600"
+                className="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-600"
             >
                 Conectemos
             </motion.h2>
@@ -83,7 +83,7 @@ export default function ContactSection() {
                 </MagneticButton>
             </div>
 
-            <footer className="mt-32 text-gray-600 text-sm font-mono text-center">
+            <footer className="mt-16 text-gray-600 text-sm font-mono text-center">
                 <p>&copy; {new Date().getFullYear()} Juan Salán Vila. All systems operational.</p>
                 <p className="mt-2 text-xs opacity-50">Built with Next.js 14, Tailwind & Love.</p>
             </footer>

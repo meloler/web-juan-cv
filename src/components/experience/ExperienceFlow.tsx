@@ -117,11 +117,21 @@ export default function ExperienceFlow() {
     const [selectedId, setSelectedId] = useState<number | null>(null);
 
     return (
-        <section className="min-h-screen flex flex-col justify-center py-20 relative overflow-hidden bg-[#050505]">
+        <section className="py-12 relative overflow-hidden bg-[#050505]">
             {/* Background Spikes */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-gray-800 to-transparent opacity-50" />
 
-            <div className="container mx-auto px-4 py-20 max-w-4xl relative z-10">
+            <div className="container mx-auto px-4 py-8 max-w-4xl relative z-10">
+                <div className="text-center mb-16">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight"
+                    >
+                        Experiencia <span className="text-gray-500">_Profesional</span>
+                    </motion.h2>
+                </div>
                 {experienceData.map((exp, index) => {
                     const isEven = index % 2 === 0;
 
@@ -132,7 +142,7 @@ export default function ExperienceFlow() {
                             whileInView={{ opacity: 1, y: 0, x: 0 }}
                             viewport={{ margin: "-100px" }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className={`flex flex-col md:flex-row items-center justify-between mb-24 w-full ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                            className={`flex flex-col md:flex-row items-center justify-between mb-16 w-full ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                         >
                             {/* Card Side */}
                             <div className={`w-full md:w-5/12 ${isEven ? 'text-right' : 'text-left'}`}>
