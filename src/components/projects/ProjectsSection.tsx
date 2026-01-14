@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Code2, Cpu, Globe, Zap, CheckCircle2 } from "lucide-react";
+import { ChevronDown, Code2, Cpu, Globe, Zap, CheckCircle2, Monitor, Map, MessageSquareText } from "lucide-react";
 
 type Project = {
     id: number;
@@ -65,6 +65,42 @@ const projects: Project[] = [
         tech: "Next.js 15 · OpenAI GPT-5-nano · Framer Motion · Tailwind CSS · AI SDK",
         icon: Code2,
         color: "from-orange-500 to-red-500"
+    },
+    {
+        id: 5,
+        title: "Windows Tracker Agent",
+        subtitle: "Desktop Time Tracking High-Performance (Privacy-First)",
+        description: "Aplicación de escritorio 100% local para seguimiento de tiempo con precisión granular.",
+        details: "Desktop App en Python/PySide6 con integración Win32 y Chrome Native Messaging para tracking de URLs. Detección de inactividad, multithreading (QThread) y persistencia SQLite. Consumo CPU <0.5% y bundling híbrido.",
+        impact: "Métricas granulares de productividad con privacidad total (Offline-First) y cero latencia.",
+        tags: ["Desktop", "Python", "Privacy"],
+        tech: "Python 3.11 · PySide6 · Win32 API · SQLite · Chrome Extensions",
+        icon: Monitor,
+        color: "from-slate-500 to-gray-400"
+    },
+    {
+        id: 6,
+        title: "GPI Nexus",
+        subtitle: "SaaS Dashboard Operativo para Soportes Publicitarios",
+        description: "Gestión de inventario publicitario y generación automática de catálogos.",
+        details: "Plataforma SaaS con frontend React/Vite y backend Google Apps Script. Incluye mapas interactivos (Leaflet), generador de PDFs desde Slides, CRM sincronizado y sistema de alertas de renovación.",
+        impact: "Digitalización total del ciclo de gestión de inventario y activos físicos.",
+        tags: ["SaaS", "React", "Google Cloud"],
+        tech: "React · Vite · GAS · Leaflet · Google Sheets/Slides API",
+        icon: Map,
+        color: "from-teal-500 to-emerald-400"
+    },
+    {
+        id: 7,
+        title: "Reputation Guard",
+        subtitle: "Sistema de gestión y respuesta de reviews para Rent a Car",
+        description: "Clasificación inteligente de feedback y propuesta de respuesta automática.",
+        details: "Motor de análisis que lee reviews, clasifica por temática (limpieza, servicio) y urgencia, generando borradores de respuesta automática para agilizar la gestión de reputación corporativa.",
+        impact: "Optimización del SLA de respuesta y mejora de la imagen de marca online.",
+        tags: ["Automation", "NLP", "Reputation"],
+        tech: "Node.js · NLP Analysis · Database Integration · Email Automation",
+        icon: MessageSquareText,
+        color: "from-amber-500 to-yellow-500"
     }
 ];
 

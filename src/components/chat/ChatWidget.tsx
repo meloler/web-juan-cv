@@ -105,8 +105,12 @@ export default function ChatWidget() {
                         <div className="p-4 border-b border-gray-800 flex justify-between items-center bg-gray-900/50">
                             <div className="flex items-center gap-3">
                                 <div className="relative">
-                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center">
-                                        <Bot size={20} className="text-white" />
+                                    <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-700">
+                                        <img
+                                            src="/juan-avatar.jpg"
+                                            alt="Juan Salán"
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
                                     <span className="absolute top-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#0c0c0c] rounded-full animate-pulse"></span>
                                 </div>
@@ -184,10 +188,28 @@ export default function ChatWidget() {
             <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                animate={!isOpen ? { y: [0, -8, 0] } : { y: 0 }}
+                transition={{
+                    y: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }
+                }}
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-blue-500/20 z-50 hover:shadow-blue-500/40 transition-shadow"
             >
-                {isOpen ? <X className="text-white" /> : <MessageSquare className="text-white" />}
+                {isOpen ? (
+                    <X className="text-white" />
+                ) : (
+                    <div className="w-full h-full rounded-full overflow-hidden border-2 border-white/20">
+                        <img
+                            src="/juan-avatar.jpg"
+                            alt="Chat with Juan"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                )}
             </motion.button>
         </div>
     );
