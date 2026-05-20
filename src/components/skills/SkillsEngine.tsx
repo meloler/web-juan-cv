@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Workflow, TrendingUp, ShieldAlert, BrainCircuit, CheckCircle2, ChevronDown, Layers, Database, Cpu, X } from "lucide-react";
+import { Workflow, TrendingUp, BrainCircuit, CheckCircle2, ChevronDown, Layers, Database, Cpu, UsersRound } from "lucide-react";
 
 type StackItem = {
     name: string;
     type: string;
-    level: "Expert" | "Advanced" | "Intermediate" | "Pro" | "High" | "Mid-High";
+    level: "Alto" | "Avanzado" | "Intermedio" | "Práctico";
 };
 
 type Scenario = {
@@ -22,82 +22,77 @@ type Scenario = {
 
 const scenarios: Scenario[] = [
     {
+        id: "coordination",
+        icon: UsersRound,
+        title: "Coordinación entre negocio y equipos técnicos",
+        description: "Muchos proyectos fallan porque negocio, perfiles técnicos y colaboradores no hablan el mismo idioma.",
+        solutionTitle: "Traducción, seguimiento y claridad operativa",
+        stack: [
+            { name: "Gestión de stakeholders", type: "Comunicación transversal", level: "Alto" },
+            { name: "Documentación funcional", type: "Requisitos y seguimiento", level: "Avanzado" },
+            { name: "Herramientas de proyecto", type: "Trello · Jira · Slack · GitHub", level: "Práctico" }
+        ],
+        color: "from-blue-400 to-cyan-500"
+    },
+    {
         id: "automation",
         icon: Workflow,
-        title: "Caos Operativo & Procesos Manuales",
-        description: "El equipo pierde tiempo en tareas repetitivas y hay errores humanos constantes.",
-        solutionTitle: "Arquitectura de Automatización",
+        title: "Procesos manuales y carga administrativa",
+        description: "Cuando la información está repartida entre correos, carpetas y hojas de cálculo, aparecen errores y pérdida de tiempo.",
+        solutionTitle: "Automatización aplicada a operaciones reales",
         stack: [
-            { name: "Consultoría de Procesos", type: "Análisis Operativo", level: "High" },
-            { name: "Google Apps Script", type: "Scripting a medida", level: "High" },
-            { name: "APIs & Webhooks", type: "Integración", level: "Mid-High" }
+            { name: "Google Workspace", type: "Gmail · Drive · Sheets", level: "Alto" },
+            { name: "Apps Script / n8n", type: "Automatización y webhooks", level: "Avanzado" },
+            { name: "IA aplicada", type: "Clasificación, extracción y apoyo operativo", level: "Práctico" }
         ],
         color: "from-emerald-400 to-cyan-500"
     },
     {
-        id: "growth",
+        id: "digital-projects",
         icon: TrendingUp,
-        title: "Fuga de Leads & Datos Dispersos",
-        description: "Marketing invierte pero Ventas no cierra. No hay trazabilidad del ROI.",
-        solutionTitle: "Ecosistema Omnicanal & Data",
+        title: "Transformación digital con sentido práctico",
+        description: "No todo necesita una gran plataforma. A veces el valor está en ordenar procesos, medir mejor y avanzar por iteraciones.",
+        solutionTitle: "Producto, datos y mejora continua",
         stack: [
-            { name: "CRM", type: "Gestión de Relación", level: "High" },
-            { name: "Google/Meta Ads", type: "Tráfico Cualificado", level: "Mid-High" },
-            { name: "Dashboard", type: "Business Intelligence", level: "Mid-High" }
+            { name: "CRM / ERP", type: "Sistemas de información empresarial", level: "Alto" },
+            { name: "Dashboards", type: "Control y toma de decisiones", level: "Intermedio" },
+            { name: "Metodologías ágiles", type: "Scrum · iteración · priorización", level: "Intermedio" }
         ],
         color: "from-orange-400 to-red-500"
     },
     {
-        id: "support",
-        icon: ShieldAlert,
-        title: "Gestión de Crisis & Soporte",
-        description: "Alto volumen de tickets, usuarios frustrados o incidentes de seguridad.",
-        solutionTitle: "Protocolo de Respuesta & Ops",
-        stack: [
-            { name: "Zendesk/Support Ops", type: "Ticketing & SLAs", level: "Expert" },
-            { name: "AI Integration", type: "Asistencia Inteligente", level: "Advanced" },
-            { name: "Crisis Comm", type: "Gestión de Reputación", level: "Expert" }
-        ],
-        color: "from-purple-400 to-pink-500"
-    },
-    {
         id: "education",
         icon: BrainCircuit,
-        title: "Brecha Digital en Equipos",
-        description: "La tecnología existe pero el equipo no sabe usarla o hay resistencia al cambio.",
-        solutionTitle: "Metodología Docente",
+        title: "Formación y adopción tecnológica",
+        description: "La tecnología solo funciona si las personas entienden para qué sirve y cómo incorporarla a su trabajo.",
+        solutionTitle: "Docencia, comunicación y adopción digital",
         stack: [
-            { name: "Docencia Universitaria", type: "Pedagogía", level: "Pro" },
-            { name: "Mentoring Técnico", type: "Adopción Digital", level: "Pro" },
-            { name: "Documentación", type: "Soporte Asíncrono", level: "Advanced" }
+            { name: "Docencia universitaria", type: "Sistemas de información y negocio digital", level: "Alto" },
+            { name: "Explicación no técnica", type: "Bajar conceptos complejos al terreno", level: "Alto" },
+            { name: "Cambio operativo", type: "Acompañamiento y mejora de procesos", level: "Avanzado" }
         ],
-        color: "from-blue-400 to-indigo-500"
+        color: "from-purple-400 to-pink-500"
     }
 ];
 
 const SolutionPanel = ({ activeScenario }: { activeScenario: Scenario }) => (
     <div className="bg-white/5 border border-white/5 rounded-2xl p-6 relative overflow-hidden mt-6">
-        {/* Header */}
         <div className="relative z-10 mb-6 pb-6 border-b border-white/10">
             <div className="flex items-center gap-2 mb-2">
                 <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${activeScenario.color} animate-pulse`} />
-                <span className="text-[10px] font-mono text-gray-400 uppercase tracking-widest">System Output</span>
+                <span className="text-[10px] font-mono text-gray-400 uppercase tracking-widest">Cómo lo enfoco</span>
             </div>
             <h4 className={`text-xl font-bold bg-gradient-to-r ${activeScenario.color} bg-clip-text text-transparent`}>
                 {activeScenario.solutionTitle}
             </h4>
         </div>
 
-        {/* Stack Items */}
         <div className="relative z-10 space-y-3">
             {activeScenario.stack.map((item, idx) => (
                 <div key={idx} className="bg-white/5 border border-white/5 rounded-xl p-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="p-1.5 bg-gray-900 rounded-lg text-gray-400">
-                            {idx === 0 ? <Layers size={14} /> :
-                                idx === 1 ? <Cpu size={14} /> :
-                                    <Database size={14} />
-                            }
+                            {idx === 0 ? <Layers size={14} /> : idx === 1 ? <Cpu size={14} /> : <Database size={14} />}
                         </div>
                         <div>
                             <div className="font-bold text-gray-200 text-xs">{item.name}</div>
@@ -124,11 +119,7 @@ const SkillItem = ({ scenario }: { scenario: Scenario }) => {
         <motion.div
             layout
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`
-                relative bg-[#0c0c0c] border border-gray-800 rounded-2xl overflow-hidden cursor-pointer
-                transition-all duration-300 hover:border-gray-600
-                ${isExpanded ? "shadow-2xl ring-1 ring-blue-500/20" : "hover:bg-white/5"}
-            `}
+            className={`relative bg-[#0c0c0c] border border-gray-800 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-gray-600 ${isExpanded ? "shadow-2xl ring-1 ring-blue-500/20" : "hover:bg-white/5"}`}
         >
             <div className="p-6">
                 <div className="flex items-center justify-between gap-4">
@@ -141,15 +132,12 @@ const SkillItem = ({ scenario }: { scenario: Scenario }) => {
                                 {scenario.title}
                             </h3>
                             <p className="text-[10px] font-mono text-gray-500 uppercase tracking-widest mt-0.5">
-                                Challenge Response
+                                Competencia aplicada
                             </p>
                         </div>
                     </div>
 
-                    <motion.div
-                        animate={{ rotate: isExpanded ? 180 : 0 }}
-                        className="text-gray-600"
-                    >
+                    <motion.div animate={{ rotate: isExpanded ? 180 : 0 }} className="text-gray-600">
                         <ChevronDown size={20} />
                     </motion.div>
                 </div>
@@ -165,12 +153,9 @@ const SkillItem = ({ scenario }: { scenario: Scenario }) => {
                         >
                             <div className="space-y-4">
                                 <div>
-                                    <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest block mb-2">Problem Statement:</span>
-                                    <p className="text-gray-400 text-sm leading-relaxed">
-                                        {scenario.description}
-                                    </p>
+                                    <span className="text-[10px] font-mono text-blue-400 uppercase tracking-widest block mb-2">Reto habitual:</span>
+                                    <p className="text-gray-400 text-sm leading-relaxed">{scenario.description}</p>
                                 </div>
-
                                 <SolutionPanel activeScenario={scenario} />
                             </div>
                         </motion.div>
@@ -184,16 +169,15 @@ const SkillItem = ({ scenario }: { scenario: Scenario }) => {
 export default function SkillsEngine() {
     return (
         <section id="skills" className="py-12 px-4 bg-black relative overflow-hidden">
-            {/* Background Gradients */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 blur-[120px] rounded-full" />
 
             <div className="max-w-4xl mx-auto relative z-10">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
-                        <span className="text-gray-500">Input:</span> Skills
+                        <span className="text-gray-500">Input:</span> Competencias
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Arquitectura de soluciones aplicada a desafíos reales de negocio.
+                        Lo que aporto cuando un proyecto necesita coordinación, tecnología, comunicación y ejecución práctica.
                     </p>
                 </div>
 
