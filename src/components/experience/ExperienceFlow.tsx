@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Calendar, MapPin, Briefcase } from "lucide-react";
+import { X, Calendar, MapPin } from "lucide-react";
 
 interface ExperienceItem {
     id: number;
@@ -17,97 +17,112 @@ interface ExperienceItem {
     };
     tech: string[];
     type: "academic" | "business";
-    color: string; // Added for UI styling
+    color: string;
 }
 
 const experienceData: ExperienceItem[] = [
     {
         id: 1,
-        role: "Profesor Universitario (Negocios Digitales)",
+        role: "Profesor Universitario",
         company: "Universidad del Atlántico Medio",
         period: "Feb 2025 - Presente",
-        description: "Formando a la próxima generación en economía digital y tecnología aplicada.",
+        description: "Docencia en sistemas de información, negocio digital, marketing digital y tecnología aplicada.",
         details: {
-            challenge: "Conectar la teoría académica con la realidad operativa de las empresas.",
-            solution: "Diseño de planes de estudio basados en casos reales, uso de IA y herramientas No-Code en el aula.",
-            impact: "Alumnos capacitados para entornos laborales digitales desde el día 1."
+            challenge: "Explicar tecnología, CRM, ERP, datos y transformación digital a perfiles de negocio de forma útil y aplicable.",
+            solution: "Diseño clases, casos prácticos y actividades que conectan conceptos técnicos con decisiones reales de empresa.",
+            impact: "Refuerzo constante de mi capacidad para comunicar, estructurar conocimiento y bajar conceptos complejos al terreno."
         },
-        tech: ["Docencia", "Estrategia Digital", "Mentoring"],
+        tech: ["Docencia", "Sistemas de Información", "CRM", "ERP", "Negocio Digital"],
         type: "academic",
         color: "from-amber-600 to-orange-500"
     },
     {
         id: 2,
-        role: "Consultor de Operaciones & Automatización",
+        role: "Transformación Digital & Operaciones",
         company: "Salán Producciones / Freelance",
         period: "2010 - Presente",
-        description: "Transformando el caos manual en sistemas eficientes.",
+        description: "Digitalización, automatización y mejora de procesos en una empresa real de eventos musicales.",
         details: {
-            challenge: "Eliminar la carga administrativa repetitiva y los errores humanos en la gestión.",
-            solution: "Desarrollo de scripts a medida (Google Apps Script, n8n) y migración a entornos cloud.",
-            impact: "Ahorro de +3h semanales de gestión manual y reducción drástica de errores operativos."
+            challenge: "Ordenar correos, facturas, documentación, webs y tareas operativas en un entorno con mucha carga manual.",
+            solution: "Implementación de flujos con Google Workspace, automatizaciones, webs desplegadas en Vercel y sistemas internos de organización.",
+            impact: "Menos fricción administrativa, mejor acceso a información y mayor capacidad para ejecutar campañas y eventos con agilidad."
         },
-        tech: ["Google Apps Script", "n8n", "Make", "Google Workspace"],
+        tech: ["Google Workspace", "Apps Script", "n8n", "Vercel", "Automatización"],
         type: "business",
         color: "from-blue-600 to-cyan-500"
     },
     {
         id: 3,
-        role: "Consultor Tecnológico (Power Platform)",
+        role: "Consultor Tecnológico",
         company: "Cognitia Tech",
         period: "Nov 2024 - May 2025",
-        description: "Auditoría y optimización de procesos corporativos.",
+        description: "Análisis de necesidades, discovery y traducción entre cliente y equipo técnico.",
         details: {
-            challenge: "Digitalizar flujos de trabajo obsoletos en clientes corporativos.",
-            solution: "Implementación de Microsoft Power Automate y casos de uso de IA aplicada.",
-            impact: "Identificación de oportunidades de automatización y mejora en la toma de decisiones."
+            challenge: "Entender problemas de negocio y convertirlos en oportunidades reales de digitalización o automatización.",
+            solution: "Diagnóstico inicial, preguntas de negocio, definición funcional y coordinación con perfiles de Power Platform.",
+            impact: "Me consolidó como nexo entre cliente, negocio y tecnología, especialmente en fases iniciales de proyecto."
         },
-        tech: ["Power Automate", "Consultoría", "IA Analysis"],
+        tech: ["Power Platform", "Power Automate", "Discovery", "IA Aplicada", "Consultoría"],
         type: "business",
         color: "from-violet-600 to-purple-500"
     },
     {
         id: 4,
         role: "Marketing Data Analyst & CRM Lead",
-        company: "Caetano Fórmula (Renault)",
+        company: "Caetano Fórmula Canarias",
         period: "Nov 2023 - Oct 2024",
-        description: "Optimización de funnel y analítica de datos.",
+        description: "Optimización de funnel, CRM, campañas digitales y reporting comercial.",
         details: {
-            challenge: "Desconexión entre marketing y ventas; leads perdidos en el funnel.",
-            solution: "Integración de Zoho CRM con campañas (Ads) y creación de dashboards de atribución real.",
-            impact: "+25% en leads cualificados y optimización del Coste por Lead (CPL)."
+            challenge: "Conectar marketing y ventas para mejorar la calidad del lead y entender la atribución real.",
+            solution: "Trabajo sobre Zoho CRM, campañas en Meta/Google Ads, dashboards y análisis de puntos de fricción del funnel.",
+            impact: "Mejora de leads cualificados, mayor trazabilidad comercial y mejor conversación entre marketing y ventas."
         },
-        tech: ["Zoho CRM", "Google Ads", "Looker Studio", "Meta Ads"],
+        tech: ["Zoho CRM", "Google Ads", "Meta Ads", "Looker Studio", "CRO"],
         type: "business",
         color: "from-emerald-600 to-green-500"
     },
     {
         id: 5,
-        role: "Client Engagement & Ops Specialist",
+        role: "Digital Product Manager",
+        company: "SQUAADS",
+        period: "May 2023 - Ago 2023",
+        description: "Nexo entre cliente y equipo de desarrollo para definir producto, workflows y requisitos.",
+        details: {
+            challenge: "Convertir necesidades poco estructuradas de cliente en requisitos claros para el equipo técnico.",
+            solution: "Interlocución directa, definición funcional, coordinación con desarrollo y explicación no técnica de avances.",
+            impact: "Experiencia clave como traductor entre negocio y tecnología, una de mis competencias más fuertes."
+        },
+        tech: ["Producto Digital", "Requisitos", "Cliente", "UX", "Coordinación"],
+        type: "business",
+        color: "from-pink-600 to-fuchsia-500"
+    },
+    {
+        id: 6,
+        role: "Client Engagement & Customer Success",
         company: "Kraken Digital Asset Exchange",
         period: "Jun 2020 - Nov 2022",
-        description: "Operaciones críticas en entorno Fintech remoto y regulado.",
+        description: "Operaciones, soporte y mejora de producto en entorno fintech remoto y regulado.",
         details: {
-            challenge: "Gestionar onboarding masivo cumpliendo normativas estrictas (KYC/AML) sin fricción.",
-            solution: "Ejecución de procesos de verificación complejos y reporte técnico de bugs a ingeniería.",
-            impact: "+700 clientes institucionales verificados y mejora de UX en procesos de compliance."
+            challenge: "Gestionar procesos de onboarding y soporte en un entorno de alto volumen, regulación y exigencia operativa.",
+            solution: "Ejecución de procesos KYC/AML, gestión en Zendesk, reporte de bugs y propuestas de mejora a equipos técnicos.",
+            impact: "Experiencia sólida en operaciones remotas, SLAs, comunicación escrita y mejora continua de producto."
         },
-        tech: ["Compliance Ops", "Zendesk", "Remote Work", "Crypto"],
+        tech: ["Zendesk", "KYC/AML", "Fintech", "Remote Ops", "Product Feedback"],
         type: "business",
         color: "from-indigo-600 to-blue-500"
     },
     {
-        id: 6,
-        role: "Marketing Manager (Ducati)",
+        id: 7,
+        role: "Marketing & Communications Coordinator",
         company: "Domingo Alonso Group",
         period: "May 2017 - Jun 2019",
-        description: "Gestión de marca premium y estrategia omnicanal.",
+        description: "Coordinación de comunicación online/offline entre marca, agencia y equipos internos.",
         details: {
-            challenge: "Sincronizar la experiencia de concesionario físico con el e-commerce.",
-            solution: "Implementación de estrategia omnicanal unificando stock y promociones.",
-            impact: "Optimización logística y coherencia de marca en todos los canales."
+            challenge: "Coordinar campañas, creatividades y acciones de marca con agencia externa y responsables internos.",
+            solution: "Seguimiento de campañas, materiales, entregables y coherencia entre objetivos de marca y ejecución.",
+            impact: "Base sólida en coordinación, comunicación, gestión de proveedores y ejecución de proyectos con equipos externos."
         },
-        tech: ["Omnicanalidad", "SAP", "E-commerce", "Brand Management"],
+        tech: ["Brand Management", "Agencias", "Campañas", "Comunicación", "Coordinación"],
         type: "business",
         color: "from-red-600 to-rose-500"
     }
@@ -117,8 +132,7 @@ export default function ExperienceFlow() {
     const [selectedId, setSelectedId] = useState<number | null>(null);
 
     return (
-        <section className="py-12 relative overflow-hidden bg-[#050505]">
-            {/* Background Spikes */}
+        <section id="experience" className="py-12 relative overflow-hidden bg-[#050505]">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-gray-800 to-transparent opacity-50" />
 
             <div className="container mx-auto px-4 py-8 max-w-4xl relative z-10">
@@ -131,6 +145,9 @@ export default function ExperienceFlow() {
                     >
                         Experiencia <span className="text-gray-500">_Profesional</span>
                     </motion.h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                        Una trayectoria conectando comunicación, operaciones, cliente, producto, tecnología y docencia.
+                    </p>
                 </div>
                 {experienceData.map((exp, index) => {
                     const isEven = index % 2 === 0;
@@ -144,7 +161,6 @@ export default function ExperienceFlow() {
                             transition={{ duration: 0.8, ease: "easeOut" }}
                             className={`flex flex-col md:flex-row items-center justify-between mb-16 w-full ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                         >
-                            {/* Card Side */}
                             <div className={`w-full md:w-5/12 ${isEven ? 'text-right' : 'text-left'}`}>
                                 <motion.div
                                     layoutId={`card-${exp.id}`}
@@ -152,12 +168,11 @@ export default function ExperienceFlow() {
                                     className="bg-[#0a0a0a] border border-gray-800 rounded-2xl p-6 hover:border-gray-500 cursor-pointer transition-colors relative group w-full"
                                     whileHover={{ scale: 1.02 }}
                                 >
-                                    {/* Corner Accents */}
                                     <div className={`absolute top-0 ${isEven ? 'right-0' : 'left-0'} w-20 h-20 bg-gradient-to-br ${exp.color} opacity-10 blur-xl rounded-full`} />
 
                                     <div className={`flex flex-col ${isEven ? 'md:items-end items-start' : 'items-start'}`}>
                                         <span className={`text-xs font-bold uppercase tracking-wider bg-gradient-to-r ${exp.color} bg-clip-text text-transparent mb-1`}>
-                                            {exp.type === 'academic' ? 'ACADEMIC' : 'BUSINESS'}
+                                            {exp.type === 'academic' ? 'DOCENCIA' : 'NEGOCIO'}
                                         </span>
                                         <h3 className="text-xl font-bold text-gray-100">{exp.role}</h3>
                                         <p className="text-sm text-gray-400 font-medium mb-2">{exp.company}</p>
@@ -167,12 +182,9 @@ export default function ExperienceFlow() {
                                     </div>
 
                                     <div className={`mt-4 flex ${isEven ? 'md:justify-end' : 'justify-start'} items-center gap-2`}>
-                                        {/* Mobile Button */}
                                         <button className="md:hidden px-4 py-2 bg-white/10 rounded-full text-xs text-white font-medium border border-white/10 flex items-center gap-2 hover:bg-white/20 transition-colors">
                                             + Info
                                         </button>
-
-                                        {/* Desktop Hover Text */}
                                         <span className="hidden md:inline-block text-xs text-blue-400 font-mono opacity-0 group-hover:opacity-100 transition-opacity">
                                             + Ver detalles
                                         </span>
@@ -180,7 +192,6 @@ export default function ExperienceFlow() {
                                 </motion.div>
                             </div>
 
-                            {/* Center Spine Dot */}
                             <div className="relative z-20 w-full md:w-2/12 flex justify-center my-8 md:my-0 h-4 md:h-auto">
                                 <motion.div
                                     initial={{ scale: 0 }}
@@ -188,13 +199,10 @@ export default function ExperienceFlow() {
                                     transition={{ delay: 0.2, duration: 0.5 }}
                                     className={`w-4 h-4 rounded-full bg-gradient-to-r ${exp.color} ring-4 ring-[#050505] shadow-[0_0_15px_rgba(0,0,0,0.5)] z-20`}
                                 />
-                                {/* Mobile Line */}
                                 <div className="absolute top-0 md:hidden h-full w-[1px] bg-gray-800" />
-
                                 <div className={`hidden md:block absolute top-1/2 -translate-y-1/2 ${isEven ? 'right-1/2' : 'left-1/2'} w-full h-[1px] bg-gradient-to-r ${exp.color} opacity-30 -z-10`} />
                             </div>
 
-                            {/* Date Side (Hidden Text as requested, but keeping layout balance) */}
                             <div className={`w-full md:w-5/12 ${isEven ? 'text-left' : 'text-right'} hidden md:block opacity-0`}>
                                 <span className="text-5xl font-bold text-gray-800/50 font-mono select-none block">
                                     {exp.period.split(" ")[0]}
@@ -205,7 +213,6 @@ export default function ExperienceFlow() {
                 })}
             </div>
 
-            {/* Expanded View Modal */}
             <AnimatePresence>
                 {selectedId !== null && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 text-left">
@@ -218,7 +225,6 @@ export default function ExperienceFlow() {
                                     layoutId={`card-${selectedId}`}
                                     className="w-full max-w-3xl bg-[#0e0e0e] border border-gray-700/50 rounded-2xl overflow-hidden shadow-2xl relative flex flex-col max-h-[90vh]"
                                 >
-                                    {/* Header */}
                                     <div className={`p-8 bg-gradient-to-r ${exp.color} relative overflow-hidden`}>
                                         <div className="absolute top-0 right-0 p-32 bg-white/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none" />
 
@@ -244,27 +250,22 @@ export default function ExperienceFlow() {
                                         </div>
                                     </div>
 
-                                    {/* Content */}
                                     <div className="p-8 space-y-8 overflow-y-auto bg-[#0a0a0a]">
-
                                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                            {/* Challenge */}
                                             <div className="bg-white/5 p-5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
                                                 <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-red-500" /> El Reto
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-red-500" /> El reto
                                                 </h4>
                                                 <p className="text-gray-300 text-sm leading-relaxed">{exp.details.challenge}</p>
                                             </div>
 
-                                            {/* Solution */}
                                             <div className="bg-white/5 p-5 rounded-xl border border-white/5 hover:border-white/10 transition-colors">
                                                 <h4 className="text-xs text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> La Solución
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> La solución
                                                 </h4>
                                                 <p className="text-gray-300 text-sm leading-relaxed">{exp.details.solution}</p>
                                             </div>
 
-                                            {/* Impact */}
                                             <div className="bg-gradient-to-b from-green-500/10 to-green-500/5 p-5 rounded-xl border border-green-500/20">
                                                 <h4 className="text-xs text-green-400 uppercase tracking-widest mb-3 flex items-center gap-2">
                                                     <span className="w-1.5 h-1.5 rounded-full bg-green-500" /> Impacto
@@ -273,9 +274,8 @@ export default function ExperienceFlow() {
                                             </div>
                                         </div>
 
-                                        {/* Tech Stack Chips */}
                                         <div>
-                                            <h4 className="text-xs text-gray-500 uppercase tracking-widest mb-4">Tecnologías & Skills</h4>
+                                            <h4 className="text-xs text-gray-500 uppercase tracking-widest mb-4">Herramientas & competencias</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {exp.tech.map(tech => (
                                                     <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300 font-mono hover:bg-white/10 transition-colors">
@@ -284,7 +284,6 @@ export default function ExperienceFlow() {
                                                 ))}
                                             </div>
                                         </div>
-
                                     </div>
                                 </motion.div>
                             );
