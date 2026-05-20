@@ -11,19 +11,21 @@ export default function NavBar() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                    <a href="https://linkedin.com/in/juansalan" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">
+                    <a href="https://linkedin.com/in/juansv" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors" aria-label="LinkedIn de Juan Salán Vila">
                         <Linkedin size={20} />
                     </a>
-                    <a href="mailto:juan@example.com" className="hover:text-blue-400 transition-colors">
+                    <a href="mailto:juansalanvila@gmail.com" className="hover:text-blue-400 transition-colors" aria-label="Email de Juan Salán Vila">
                         <Mail size={20} />
                     </a>
-                    <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
+                    <a href="https://wa.me/34685101737" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors" aria-label="WhatsApp de Juan Salán Vila">
                         <MessageCircle size={20} />
                     </a>
                 </div>
             </div>
 
-            {/* Toggle removed as requested */}
+            <a href="#projects" className="hidden md:inline-flex text-xs font-mono text-gray-400 hover:text-white transition-colors uppercase tracking-widest">
+                Proyectos
+            </a>
         </nav>
     );
 }
