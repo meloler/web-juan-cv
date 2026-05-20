@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Code2, Cpu, Globe, Zap, CheckCircle2, Map, MessageSquareText, FileText } from "lucide-react";
+import { ChevronDown, Code2, Cpu, Globe, Zap, CheckCircle2, Map, MessageSquareText, FileText, Github } from "lucide-react";
 
 type Project = {
     id: number;
@@ -184,6 +184,19 @@ export default function ProjectsSection() {
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
                         Cosas que he construido para aprender, resolver problemas reales y aplicar tecnología sin quedarme en la teoría.
                     </p>
+                    <motion.a
+                        href="https://github.com/meloler"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.15 }}
+                        className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition-all hover:border-white/30 hover:bg-white/10"
+                    >
+                        <Github size={18} />
+                        Ver mi GitHub
+                    </motion.a>
                 </div>
 
                 <div className="flex flex-col gap-3">
