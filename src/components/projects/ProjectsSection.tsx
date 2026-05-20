@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Code2, Cpu, Globe, Zap, CheckCircle2, Monitor, Map, MessageSquareText } from "lucide-react";
+import { ChevronDown, Code2, Cpu, Globe, Zap, CheckCircle2, Map, MessageSquareText, FileText } from "lucide-react";
 
 type Project = {
     id: number;
@@ -21,86 +21,74 @@ const projects: Project[] = [
     {
         id: 1,
         title: "Facturas Ordenadas",
-        subtitle: "SaaS de automatización administrativa — Beta privada funcional",
-        description: "Eliminación de tareas repetitivas mediante automatización e IA.",
-        details: "El sistema detecta y procesa facturas desde Gmail y Drive, extrae datos clave de forma automática, los estructura y los deja listos para su uso en flujos contables y de control.",
-        impact: "Reduce errores manuales y carga operativa con una arquitectura orientada a procesos reales, no a demos.",
-        tags: ["SaaS", "FinTech", "AI"],
-        tech: "TypeScript · Node.js · Fastify · PostgreSQL · Prisma · Docker · Google Cloud",
+        subtitle: "Automatización documental para Gmail y Google Drive",
+        description: "Sistema para reducir carga administrativa y ordenar facturas automáticamente.",
+        details: "Flujo que detecta correos con facturas, clasifica documentos y los organiza en Google Drive para facilitar el control administrativo y los cierres trimestrales.",
+        impact: "Convierte una tarea repetitiva y propensa a errores en un proceso más trazable, ordenado y fácil de revisar.",
+        tags: ["Automatización", "Google Workspace", "IA"],
+        tech: "Gmail · Google Drive · Apps Script · OCR/IA · Google Cloud",
         icon: Zap,
         color: "from-blue-500 to-cyan-400"
     },
     {
         id: 2,
-        title: "Lead Flow Automation",
-        subtitle: "Sistema de captación y respuesta inteligente",
-        description: "Mejora de la eficiencia operativa y experiencia de usuario desde el primer contacto.",
-        details: "Cada registro en la landing se procesa automáticamente: almacenamiento estructurado y activación de respuesta inmediata por email.",
-        impact: "Sustituye fricción humana por flujos claros y controlados, asegurando fidelidad y rapidez.",
-        tags: ["Automation", "CRM", "Marketing"],
-        tech: "Google Apps Script · Google Sheets · Automatización de email · Integración web",
-        icon: Cpu,
-        color: "from-purple-500 to-pink-500"
-    },
-    {
-        id: 3,
-        title: "Ocean Streamer",
-        subtitle: "Monitoring en tiempo real de condiciones marítimas",
-        description: "Sistema de captura y emisión de vídeo para la playa de Las Canteras.",
-        details: "Conexión de webcam remota vía DNS dinámico (No-IP) a entorno local para emisión 24/7 en YouTube vía OBS.",
-        impact: "Resolución de problemas de conectividad remota y acceso público continuo a datos visuales.",
-        tags: ["IoT", "Streaming", "Networks"],
-        tech: "Webcam IP · No-IP · OBS Studio · YouTube Streaming · Redes local",
-        icon: Globe,
+        title: "ERP fiscal personal",
+        subtitle: "Sistema propio para gestión como autónomo",
+        description: "Control de facturas, ingresos, gastos, previsiones e impuestos.",
+        details: "Herramienta interna para centralizar mi actividad económica como autónomo, visualizar previsiones y anticipar obligaciones fiscales como el modelo 130.",
+        impact: "Me permite tener una visión clara de caja, fiscalidad y previsión, sin depender de hojas sueltas o cálculos improvisados.",
+        tags: ["ERP", "Fiscalidad", "Dashboard"],
+        tech: "Sheets · Automatización · Dashboard · Procesos fiscales",
+        icon: FileText,
         color: "from-emerald-500 to-teal-400"
     },
     {
-        id: 4,
-        title: "AI Digital Twin Portfolio",
-        subtitle: "Esta plataforma — Gemelo Digital e Ingeniería de Prompts",
-        description: "Portfolio interactivo con IA integrada y arquitectura de alto rendimiento.",
-        details: "Desarrollado mediante 'Pair Programming' con agentes de IA, utilizando refinamiento iterativo de prompts para crear una experiencia de usuario premium.",
-        impact: "Integra un 'Cerebro Digital' capaz de representar mi trayectoria y resolver dudas técnicas en tiempo real.",
-        tags: ["AI Twin", "UX/UI", "Next.js"],
-        tech: "Next.js 15 · OpenAI GPT-5-nano · Framer Motion · Tailwind CSS · AI SDK",
-        icon: Code2,
-        color: "from-orange-500 to-red-500"
-    },
-    {
-        id: 5,
-        title: "Windows Tracker Agent",
-        subtitle: "Desktop Time Tracking High-Performance (Privacy-First)",
-        description: "Aplicación de escritorio 100% local para seguimiento de tiempo con precisión granular.",
-        details: "Desktop App en Python/PySide6 con integración Win32 y Chrome Native Messaging para tracking de URLs. Detección de inactividad, multithreading (QThread) y persistencia SQLite. Consumo CPU <0.5% y bundling híbrido.",
-        impact: "Métricas granulares de productividad con privacidad total (Offline-First) y cero latencia.",
-        tags: ["Desktop", "Python", "Privacy"],
-        tech: "Python 3.11 · PySide6 · Win32 API · SQLite · Chrome Extensions",
-        icon: Monitor,
-        color: "from-slate-500 to-gray-400"
-    },
-    {
-        id: 6,
-        title: "GPI Nexus",
-        subtitle: "SaaS Dashboard Operativo para Soportes Publicitarios",
-        description: "Gestión de inventario publicitario y generación automática de catálogos.",
-        details: "Plataforma SaaS con frontend React/Vite y backend Google Apps Script. Incluye mapas interactivos (Leaflet), generador de PDFs desde Slides, CRM sincronizado y sistema de alertas de renovación.",
-        impact: "Digitalización total del ciclo de gestión de inventario y activos físicos.",
-        tags: ["SaaS", "React", "Google Cloud"],
-        tech: "React · Vite · GAS · Leaflet · Google Sheets/Slides API",
+        id: 3,
+        title: "Agenda Cultural GC",
+        subtitle: "Pipeline de datos para eventos culturales en Gran Canaria",
+        description: "Proyecto para recopilar, limpiar, clasificar y geolocalizar eventos culturales.",
+        details: "Sistema de scraping y auditoría que recoge eventos de diferentes fuentes, elimina duplicados, mejora ubicaciones genéricas y prepara datos para una experiencia mobile-first.",
+        impact: "Explora cómo convertir información cultural dispersa en una guía útil y accionable para descubrir planes en Gran Canaria.",
+        tags: ["Datos", "Producto", "Cultura"],
+        tech: "Python · Playwright · Supabase · Vercel · Geocoding · IA",
         icon: Map,
+        color: "from-purple-500 to-pink-500"
+    },
+    {
+        id: 4,
+        title: "GPI SaaS MVP",
+        subtitle: "Gestión de activos publicitarios",
+        description: "MVP para centralizar activos, estados e información operativa.",
+        details: "Proyecto SaaS orientado a ordenar activos publicitarios, facilitar seguimiento y mejorar la visualización de información que normalmente acaba dispersa entre hojas, carpetas y correos.",
+        impact: "Ejercicio práctico de producto digital aplicado a gestión operativa, dashboards y coordinación de información.",
+        tags: ["SaaS", "Gestión", "Dashboard"],
+        tech: "React · Vite · Google Apps Script · Sheets · Slides API",
+        icon: Cpu,
         color: "from-teal-500 to-emerald-400"
     },
     {
-        id: 7,
-        title: "Reputation Guard",
-        subtitle: "Sistema de gestión y respuesta de reviews para Rent a Car",
-        description: "Clasificación inteligente de feedback y propuesta de respuesta automática.",
-        details: "Motor de análisis que lee reviews, clasifica por temática (limpieza, servicio) y urgencia, generando borradores de respuesta automática para agilizar la gestión de reputación corporativa.",
-        impact: "Optimización del SLA de respuesta y mejora de la imagen de marca online.",
-        tags: ["Automation", "NLP", "Reputation"],
-        tech: "Node.js · NLP Analysis · Database Integration · Email Automation",
+        id: 5,
+        title: "Chatvoz / Voice Booking Agent",
+        subtitle: "Agente de voz para reservas con lógica controlada",
+        description: "Exploración de agentes conversacionales para pymes con reservas y agenda.",
+        details: "Arquitectura donde el agente de voz conversa, pero las decisiones críticas pasan por un backend que valida disponibilidad, confirma datos y evita dobles reservas.",
+        impact: "Une IA conversacional, automatización y lógica de negocio para resolver un caso real de atención repetitiva.",
+        tags: ["Voice AI", "Agentes", "Reservas"],
+        tech: "Node.js · Supabase · Webhooks · n8n · Vapi/Retell",
         icon: MessageSquareText,
-        color: "from-amber-500 to-yellow-500"
+        color: "from-orange-500 to-red-500"
+    },
+    {
+        id: 6,
+        title: "Salán Producciones Web",
+        subtitle: "Web y landings para eventos musicales",
+        description: "Modernización de presencia digital para producción de eventos.",
+        details: "Migración hacia un flujo más ágil para publicar webs, landings, campañas y contenidos de eventos sin depender de procesos lentos en WordPress o hosting tradicional.",
+        impact: "Aplicación directa de tecnología, marketing digital y automatización en una empresa real del sector cultural y musical.",
+        tags: ["Web", "Eventos", "Marketing"],
+        tech: "GitHub · Vercel · DNS · Analítica · Landing pages",
+        icon: Globe,
+        color: "from-slate-500 to-gray-400"
     }
 ];
 
@@ -111,11 +99,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <motion.div
             layout
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`
-                relative bg-[#0c0c0c] border border-gray-800 rounded-2xl overflow-hidden cursor-pointer
-                transition-all duration-300 hover:border-gray-600
-                ${isExpanded ? "shadow-2xl ring-1 ring-blue-500/20" : "hover:bg-white/5"}
-            `}
+            className={`relative bg-[#0c0c0c] border border-gray-800 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-gray-600 ${isExpanded ? "shadow-2xl ring-1 ring-blue-500/20" : "hover:bg-white/5"}`}
         >
             <div className="p-6">
                 <div className="flex items-center justify-between gap-4">
@@ -128,18 +112,19 @@ const ProjectCard = ({ project }: { project: Project }) => {
                                 {project.title}
                             </h3>
                             <p className="text-[10px] font-mono text-gray-500 uppercase tracking-widest mt-0.5">
-                                {project.id === 4 ? "Meta Project" : project.tags[0]}
+                                {project.tags[0]}
                             </p>
                         </div>
                     </div>
 
-                    <motion.div
-                        animate={{ rotate: isExpanded ? 180 : 0 }}
-                        className="text-gray-600"
-                    >
+                    <motion.div animate={{ rotate: isExpanded ? 180 : 0 }} className="text-gray-600">
                         <ChevronDown size={20} />
                     </motion.div>
                 </div>
+
+                <p className="text-gray-500 text-sm mt-4 leading-relaxed">
+                    {project.description}
+                </p>
 
                 <AnimatePresence>
                     {isExpanded && (
@@ -184,7 +169,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
 export default function ProjectsSection() {
     return (
         <section id="projects" className="py-12 px-4 bg-[#050505] relative overflow-hidden">
-            {/* Ambient Background */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
 
             <div className="max-w-4xl mx-auto relative z-10">
@@ -195,8 +179,11 @@ export default function ProjectsSection() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight"
                     >
-                        Proyectos <span className="text-gray-500">_Seleccionados</span>
+                        Proyectos <span className="text-gray-500">_Reales</span>
                     </motion.h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+                        Cosas que he construido para aprender, resolver problemas reales y aplicar tecnología sin quedarme en la teoría.
+                    </p>
                 </div>
 
                 <div className="flex flex-col gap-3">
