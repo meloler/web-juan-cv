@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web CV — Juan Salán Vila
 
-## Getting Started
+Web personal para presentar mi perfil profesional, experiencia, proyectos y formas de contacto en un formato más claro que un CV tradicional.
 
-First, run the development server:
+🌐 Producción: https://web-juan-cv.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Qué es
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Este proyecto es mi CV/portfolio web. La idea no era hacer una página compleja, sino una presencia digital rápida, limpia y fácil de mantener donde poder enseñar:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- quién soy,
+- qué experiencia tengo,
+- qué tipo de proyectos construyo,
+- qué herramientas uso,
+- y cómo contacto conmigo.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Por qué lo hice
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Quería tener un CV vivo, no un PDF estático. Un sitio que pudiera ir actualizando a medida que aprendo nuevas herramientas, lanzo proyectos o cambio mi posicionamiento profesional.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+También me sirve como proyecto práctico para trabajar:
 
-## Deploy on Vercel
+- estructura de contenidos,
+- SEO básico,
+- diseño responsive,
+- despliegue moderno,
+- analítica,
+- y presentación profesional online.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Funcionalidades
+
+- Landing personal con posicionamiento profesional.
+- Sección de experiencia y trayectoria.
+- Sección de proyectos destacados.
+- Formulario de contacto.
+- Diseño responsive para móvil y escritorio.
+- Preparación SEO básica.
+- Despliegue en Vercel.
+
+---
+
+## Stack
+
+- Next.js
+- React
+- CSS / Tailwind según versión del proyecto
+- Vercel
+- GitHub
+
+---
+
+## Qué me aporta este proyecto
+
+Este repo me sirve como laboratorio personal para mejorar mi forma de presentar ideas, ordenar información profesional y probar cambios rápidos en un entorno web real.
+
+No es solo una web de presentación: es una forma de mantener mi perfil actualizado y conectado con los proyectos que voy construyendo.
+
+---
+
+## Próximas mejoras posibles
+
+- Mejorar la sección de proyectos con fichas más visuales.
+- Añadir métricas o casos de uso reales.
+- Conectar el portfolio con GitHub de forma más dinámica.
+- Mejorar SEO técnico y metadatos sociales.
+- Añadir versión descargable del CV.
