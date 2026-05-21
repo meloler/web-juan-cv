@@ -1,6 +1,6 @@
 "use client";
 
-import { Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Linkedin, MessageCircle } from "lucide-react";
 
 export default function NavBar() {
     return (
@@ -13,9 +13,6 @@ export default function NavBar() {
                 <div className="flex items-center gap-3">
                     <a href="https://linkedin.com/in/juansv" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors" aria-label="LinkedIn de Juan Salán Vila">
                         <Linkedin size={20} />
-                    </a>
-                    <a href="#contact" className="hover:text-blue-400 transition-colors" aria-label="Ir al formulario de contacto">
-                        <Mail size={20} />
                     </a>
                     <a href="https://wa.me/34685101737" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors" aria-label="WhatsApp de Juan Salán Vila">
                         <MessageCircle size={20} />
