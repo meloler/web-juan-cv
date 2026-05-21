@@ -95,7 +95,7 @@ export default function HeroSection() {
                     <a href="#projects" className="px-5 py-3 rounded-full bg-white text-black text-sm font-semibold hover:bg-gray-200 transition-colors">
                         Ver proyectos reales
                     </a>
-                    <a href="mailto:juansalanvila@gmail.com" className="px-5 py-3 rounded-full border border-white/15 text-white text-sm font-semibold hover:bg-white/10 transition-colors">
+                    <a href="#contact" className="px-5 py-3 rounded-full border border-white/15 text-white text-sm font-semibold hover:bg-white/10 transition-colors">
                         Contactar
                     </a>
                 </motion.div>
